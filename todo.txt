@@ -1,0 +1,86 @@
+Admin Login
+============
+1. Login & Logout
+2. Product, Category, User crud with multiple image and video upload
+
+User Login
+=============
+1. Login & Logout
+2. View and Add to Cart product  
+3. Buy product
+4. Check delivery status
+
+Have to cover these topics
+============================
+1. File upload (img, video)
+2. Authentication (admin, user)
+3. CRUD
+4. API integration (GET, POST, PUT, DELETE) with JWT, OAuth, Passport.
+5. Session handling
+6. Search with pagination
+7. Captcha implementation
+8. Node with MongoDB.
+
+Others
+==========
+1. SSL configuration.
+2. Have to host the application on live 
+3. GIT (branching, merging, and resolving conflicts)
+4. Unit testing
+
+
+
+'transport' => 'Smtp',
+'from' => 'tnei_info@tn.gov.in',
+'host' => '10.236.242.79',
+'port' => 465,
+'username' => 'tnei_info',
+'password' => 'info1@TNEI',
+'timeout' => 3000,
+'client' => null,
+'log' => true,
+'tls' => false,
+        
+
+sithanantham.s@indusnet.co.in
+
+103.59.65.10 - public IP
+10.236.242.79 - local IP
+465 - port
+9445022220 - Krishnamoorthi
+
+etc host file entry
+ip adress 10.236.242.79 mail.tn.gov.in
+'username' => 'tnei_info',
+'password' => 'info1@TNEI',
+ssl required=> yes
+Authentication required= yes
+ssl veify = disabled
+accept all certificate = yes
+port = 465
+
+php MAIL_ENCRYPTION
+MAIL_HOST=mail.tn.gov.in
+
+
+
+pub
+MAIL_DRIVER=smtp
+#MAIL_DRIVER=sendmail
+#MAIL_HOST=10.236.242.79
+MAIL_HOST=mail.tn.gov.in
+#MAIL_PORT=465
+MAIL_PORT=25
+MAIL_USERNAME=contact.tnrera
+MAIL_PASSWORD=Contact@2017
+MAIL_ENCRYPTION=tls
+#MAIL_ENCRYPTION=ssl
+MAIL_FROM_ADDRESS=contact.tnrera@tn.gov.in
+MAIL_FROM_NAME=TNRERA
+PUSHER_APP_ID=
+PUSHER_APP_KEY=
+PUSHER_APP_SECRET=
+PUSHER_APP_CLUSTER=mt1
+
+AZLPV8067C
+346823001879

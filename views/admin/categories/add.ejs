@@ -1,0 +1,49 @@
+<%- include('../includes/header') %>
+
+    <!-- Begin Page Content -->
+    <div class="container-fluid">
+
+        <!-- Page Heading -->
+        <!-- DataTales Example -->
+        <div class="card shadow mb-4">
+            <div class="card-header py-3">
+                <div class="row col-md-12">
+                    <div class="col-md-10">
+                        <h6 class="m-0 font-weight-bold text-primary"> Add Categories </h6>
+                    </div>
+                    <div class="col-md-2" align="right">
+                        <a href="/admin/categories" class="btn btn-sm btn-primary"> <i class="fa fa-list"></i> Categories List
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="card-body">
+                <% if(messages.success) { %>
+                    <div style="color:green"> <%- messages.success %> </div>
+                <% } %>
+
+                <% if(messages.error) { %>
+                    <div style="color:red"> <%- messages.error %> </div>
+                <% } %>
+
+                <form action="add" method="post">
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="inputEmail4">Name</label>
+                            <input type="text" class="form-control" name="name" value="<%= name %>" placeholder="Enter Name">
+                        </div>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-sm btn-primary">Submit</button>
+                    <button type="reset" class="btn btn-sm btn-danger">Reset</button>
+                </form>
+            </div>
+        </div>
+
+    </div>
+    <!-- /.container-fluid -->
+
+    </div>
+    <!-- End of Main Content -->
+
+    <%- include('../includes/footer') %>

@@ -1,0 +1,68 @@
+<%- include('../includes/header') %>
+
+    <!-- Begin Page Content -->
+    <div class="container-fluid">
+
+        <!-- Page Heading -->
+        <!-- DataTales Example -->
+        <div class="card shadow mb-4">
+            <div class="card-header py-3">
+                <div class="row col-md-12">
+                    <div class="col-md-10">
+                        <h6 class="m-0 font-weight-bold text-primary"> Update User </h6>
+                    </div>
+                    <div class="col-md-2" align="right">
+                        <a href="/admin/users" class="btn btn-sm btn-primary"> <i class="fa fa-list"></i> Users List
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="card-body">
+                <% if(messages.success) { %>
+                    <div style="color:green"> <%- messages.success %> </div>
+                <% } %>
+
+                <% if(messages.error) { %>
+                    <div style="color:red"> <%- messages.error %> </div>
+                <% } %>
+
+                <form action="<%= id %>" method="post">
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="inputEmail4">Name</label>
+                            <input type="text" class="form-control" name="name" value="<%= name %>" placeholder="Enter Name">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="inputEmail4">User Type</label>
+                            <select name="user_type" class="form-control">
+                                <option value="1" <%= (user_type == 1) ? 'selected' : '' %>>User</option>
+                                <option value="2" <%= (user_type == 2) ? 'selected' : '' %>>Admin</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="inputEmail4">Email</label>
+                            <input type="email" class="form-control" name="email" value="<%= email %>" placeholder="Enter Email">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="inputEmail4">Phone</label>
+                            <input type="text" class="form-control" name="phone" value="<%= phone %>" placeholder="Enter Phone">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="inputEmail4">DOB</label>
+                            <input type="date" class="form-control" name="dob" value="<%= dob %>" placeholder="Enter dob">
+                        </div>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-sm btn-primary">Update</button>
+                    <button type="reset" class="btn btn-sm btn-danger">Reset</button>
+                </form>
+            </div>
+        </div>
+
+    </div>
+    <!-- /.container-fluid -->
+
+    </div>
+    <!-- End of Main Content -->
+
+    <%- include('../includes/footer') %>

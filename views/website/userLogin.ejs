@@ -1,0 +1,23 @@
+<%- include('./includes/header') %> 
+    <div class="row" style="margin-left:35%; margin-right:35%; margin-top:10%">
+      <div class="col-md-12">
+        <div class="panel panel-default">
+          <div class="panel-heading">User Login</div>
+          <div class="panel-body">
+            <% if(messages.error) { %>
+                <div style="color:red"> <%- messages.error %> </div>
+            <% } %>
+            <form method="post" action="/user/login" class="user">                
+                <div class="form-group">
+                    <input type="email" name="email" value="<%= email %>" class="form-control form-control-user" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Enter Email Address...">
+                </div>
+                <div class="form-group">
+                    <input type="password" name="password" class="form-control form-control-user" id="exampleInputPassword" placeholder="Password">
+                </div>
+                <button type="submit" class="btn btn-primary btn-user btn-block">Login</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <%- include('./includes/footer') %> 

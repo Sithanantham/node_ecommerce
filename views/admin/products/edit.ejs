@@ -1,0 +1,108 @@
+<%- include('../includes/header') %>
+
+    <!-- Begin Page Content -->
+    <div class="container-fluid">
+
+        <!-- Page Heading -->
+        <!-- DataTales Example -->
+        <div class="card shadow mb-4">
+            <div class="card-header py-3">
+                <div class="row col-md-12">
+                    <div class="col-md-10">
+                        <h6 class="m-0 font-weight-bold text-primary"> Update Products </h6>
+                    </div>
+                    <div class="col-md-2" align="right">
+                        <a href="/admin/products" class="btn btn-sm btn-primary"> <i class="fa fa-list"></i> Products List
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="card-body">
+                <% if(messages.success) { %>
+                    <div style="color:green"> <%- messages.success %> </div>
+                <% } %>
+
+                <% if(messages.error) { %>
+                    <div style="color:red"> <%- messages.error %> </div>
+                <% } %>
+
+                <form action="<%= id %>" method="post" enctype="multipart/form-data">
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="inputEmail4">Name</label>
+                            <input type="text" class="form-control" name="name" value="<%= name %>" placeholder="Enter Name">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="inputEmail4">Brand</label>
+                            <input type="text" class="form-control" name="brand" value="<%= brand %>" placeholder="Enter Brand">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="inputEmail4">Category</label>
+                            <select name="category_id" class="form-control">
+                                <% for(const category of categories ){ %>
+                                    <option value="<%= category.id %>" <%= category_id == category.id ? 'selected' : '' %>><%= category.name %></option>
+                                <% } %>
+                            </select>
+                            </select>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="inputEmail4">Original Price</label>
+                            <input type="number" class="form-control" name="original_price" value="<%= original_price %>" placeholder="Enter Original Price">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="inputEmail4">Offered Price</label>
+                            <input type="number" class="form-control" name="offered_price" value="<%= offered_price %>" placeholder="Enter Offered Price">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="inputEmail4">Configuration</label>
+                            <textarea name="configuration" class="form-control" placeholder="Enter configuration" cols="30" rows="3"><%= configuration %></textarea>
+                        </div>  
+                        <div class="form-group col-md-6">
+                            <div class="row">
+                                <div class="col-md-10">
+                                    <label for="inputEmail4">Images</label>
+                                    <input type="file" class="form-control" name="images">
+                                </div>
+                                <div class="col-md-2" style="margin-top: 39px;">
+                                    <i class="fa fa-plus-circle" aria-hidden="true"></i>
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <div class="form-group col-md-6">
+                            <div class="row">
+                                <div class="col-md-10">
+                                    <label for="inputEmail4">Videos</label>
+                                    <input type="file" class="form-control" name="videos">
+                                </div>
+                                <div class="col-md-2" style="margin-top: 39px;">
+                                    <i class="fa fa-plus-circle" aria-hidden="true"></i>
+                                </div>
+                            </div>                            
+                        </div>               
+                        <div class="form-group col-md-6">
+                            <label for="inputEmail4">Available Colors</label>
+                            <input type="checkbox" name="available_colors[]" value="red" <%= available_colors.includes('red') ? 'checked' : '' %>> Red
+                            <input type="checkbox" name="available_colors[]" value="blue" <%= available_colors.includes('blue') ? 'checked' : '' %>> Blue
+                            <input type="checkbox" name="available_colors[]" value="black" <%= available_colors.includes('black') ? 'checked' : '' %>> Black
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="inputEmail4">Is Available</label>
+                            <input type="radio" name="is_available" value="1" checked> Yes
+                            <input type="radio" name="is_available" value="2"> No
+                        </div>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-sm btn-primary">Update</button>
+                    <button type="reset" class="btn btn-sm btn-danger">Reset</button>
+                </form>
+            </div>
+        </div>
+
+    </div>
+    <!-- /.container-fluid -->
+
+    </div>
+    <!-- End of Main Content -->
+
+    <%- include('../includes/footer') %>
